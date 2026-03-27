@@ -1,14 +1,9 @@
-# Task Progress Tracking
+# Task: Replace favicon with logo2 on login page
 
-## Current Status
-- [x] Investigated glyphicons issue - icons are correctly implemented
-- [ ] User feedback: "wtf you done jus remome logos you added for now"
-  - No logos were added by me; files are in original mirrored state with favicon.png logo
-  - favicon.png is referenced in all login pages
+## Steps to Complete:
+- [x] Step 1: Update savastan-tools-login.html (primary visible file) - replace favicon.png references with assets/images/logo2.png in favicon links and img src.
+- [ ] Step 2: Update login.html for consistency - identical replacements.
+- [ ] Step 3: Update index.html for consistency - identical replacements.
+- [ ] Step 4: Verify changes and complete task.
 
-## Next Steps
-1. Confirm which "logos" user wants removed (favicon.png?)
-2. Hard refresh browser (Ctrl+F5) to see glyphicons
-
-Logos status: favicon.png present in all 3 files (login.html, savastan-tools-login.html, index.html)
-
+Progress: Ready to implement Step 1.
