@@ -634,6 +634,7 @@ body.stop-scrolling {
     margin-top: 0;
     opacity: 1; } }
 
+
 .animateXMark {
   -webkit-animation: animateXMark 0.5s;
   animation: animateXMark 0.5s; }

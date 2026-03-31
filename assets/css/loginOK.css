@@ -14490,3 +14490,54 @@ fieldset[disabled] .btn-fb.active {
 .paddingtop20 {
   padding-top: 20px;
 }
+
+
+/* lading  page*/
+
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('../images/loading.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
+  
+  p#powered {
+    display: none;
+}
+
+.short{
+    font-weight:bold;
+  color:#FF0000;
+  font-size:larger;
+}
+ .weak{
+    font-weight:bold;
+  color:orange;
+  font-size:larger;
+}
+.good{
+    font-weight:bold;
+  color:#2D98F3;
+  font-size:larger;
+}
+.strong{
+    font-weight:bold;
+  color: limegreen;
+  font-size:larger;
+}
+
+.CAPTCHA{
+  float: left;
+  width: 50%;
+  padding-bottom: 11px;
+}
+
+.CAPTCHA_input{
+  float: right;
+    width: 48%;
+    margin-top: 20px;
+}

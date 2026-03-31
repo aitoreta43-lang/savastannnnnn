@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://savestan0.tools/sitemap.xml
+
+# Optimized for fast indexing
+Crawl-delay: 1
